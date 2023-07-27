@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.HomeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_medium_2"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginEnd="@dimen/margin_medium_2"
+            android:layout_marginBottom="@dimen/margin_medium_2"
+            android:text="MovieDB"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_regular_3x" />
+
+
+        <LinearLayout
+            android:id="@+id/llSearchSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@id/lblGreeting"
+            >
+
+            <EditText
+                android:id="@+id/edtSearch"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_below="@id/lblGreeting"
+                android:paddingHorizontal="@dimen/margin_medium_2"
+                android:layout_marginHorizontal="@dimen/margin_medium_2"
+                android:background="@drawable/background_search"
+                android:hint="Search"
+                android:drawableLeft="@drawable/ic_search"
+                android:drawableTint="@color/grey"
+                android:drawablePadding="@dimen/margin_medium_2"
+                />
+
+            <LinearLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="@dimen/margin_medium"
+                android:layout_marginEnd="@dimen/margin_medium_2"
+                android:background="@drawable/background_filter">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_setting"
+                    android:tint="@color/white"
+                    />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutGeneres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/llSearchSection"
+            android:layout_marginTop="@dimen/margin_medium_3"
+            app:tabIndicatorColor="@color/blue"
+            android:background="@color/white"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/black"
+            app:tabTextColor="@color/grey" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/slideVp"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_below="@+id/tabLayoutGeneres"/>
+
+        <LinearLayout
+            android:id="@+id/indicator_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/slideVp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblRecommended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_medium_2"
+            android:layout_below="@id/indicator_layout"
+            android:text="Upcoming"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_regular_2x" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUpcomingMovie"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            tools:listitem="@layout/view_holder_movie"
+            android:layout_below="@id/lblRecommended"
+            tools:itemCount="5"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lblPopularMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            android:layout_marginHorizontal="@dimen/margin_medium_2"
+            android:layout_below="@id/rvUpcomingMovie"
+            android:text="Popular"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_regular_2x" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium_2"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="vertical"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/view_holder_popular_movie"
+            android:layout_below="@id/lblPopularMovie"
+            tools:itemCount="5"/>
+
+
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>

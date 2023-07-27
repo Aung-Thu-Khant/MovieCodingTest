@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSizeMedium" parent="">
+        <item name="cornerSize">@dimen/margin_medium_2</item>
+    </style>
+    <style name="ShapeAppearanceOverlay.App.Receipt" parent="">
+        <item name="cornerSizeTopRight">@dimen/margin_medium_2</item>
+        <item name="cornerSizeTopLeft">@dimen/margin_medium_2</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.BottomConor" parent="">
+        <item name="cornerSizeBottomLeft">@dimen/margin_medium_2</item>
+        <item name="cornerSizeBottomRight">@dimen/margin_medium_2</item>
+    </style>
+
+</resources>

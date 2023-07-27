@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MovieDetailActivity"
+    android:fitsSystemWindows="false">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivDetailCover"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@drawable/placeholder_movie"
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.BottomConor"
+        android:scaleType="centerCrop"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:src="@drawable/ic_back" />
+
+    <LinearLayout
+        android:id="@+id/trallerwatchFavouriteLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivDetailCover"
+        android:layout_centerHorizontal="true"
+        android:weightSum="3"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_traller" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trallerwatchFavouriteLayout"
+                android:text="Watch Traller"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_regular_2x" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_seasons" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trallerwatchFavouriteLayout"
+                android:text="Seasons"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_regular_2x" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_medium_3"
+            android:background="@drawable/watch_bg"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_play" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/trallerwatchFavouriteLayout"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin_card_medium"
+                android:text="Watch Now"
+                android:textColor="@color/white"
+                android:textColorHighlight="@color/white"
+                android:textSize="@dimen/text_regular_2x" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDetailName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trallerwatchFavouriteLayout"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:text="Frozen"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="November 20, 2021"
+        android:layout_below="@id/tvDetailName"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/detailFavouriteLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trallerwatchFavouriteLayout"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium_2"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivFavourite"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:src="@drawable/ic_favourite" />
+
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvVote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="210,453 votes"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_below="@id/detailFavouriteLayout"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMovieDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Movie Description"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_below="@id/tvDate"
+        android:textColor="@color/black"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvMovieDescriptionDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="It’s still a dazzling spectacle that the film’s legions of kiddie fans will love. But adults will note that it’s more serious, sadder and wiser than the film. Some New York critics didn’t seem to be entirely happy with this when it opened on Broadway in 2018, criticising it for being dour. But I liked Grandage’s more melancholy spin, which is written by the film’s screenwriter and director Jennifer Lee, with new songs (and old songs) from the film’s songwriters Kristen Anderson-Lopez and Robert Lopez. To be clear, the talking snowman and the goofy reindeer are still in it, but it does land a bit differently. "
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginEnd="@dimen/margin_medium_2"
+        android:layout_below="@id/tvMovieDescription"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular"
+        />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/lbRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvMovieDescriptionDetail"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:text="Ratings"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txtRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/lbRating"
+        android:layout_alignTop="@id/lbRating"
+        android:layout_marginStart="@dimen/margin_medium_2"
+        android:text="4.5"
+        android:textColor="@color/red"
+        android:textSize="@dimen/text_regular_2x"
+        android:textStyle="bold"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnGiveRating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lbRating"
+        android:text="Give Ratings"
+        android:textAllCaps="false"
+        android:padding="10dp"
+        android:layout_alignLeft="@+id/lbRating"
+        android:layout_alignRight="@+id/tvVote"
+        android:background="@drawable/watch_bg"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/margin_medium_2"
+        android:layout_marginBottom="@dimen/margin_medium"
+        android:textSize="@dimen/text_regular_2x" />
+
+</RelativeLayout>
+</ScrollView>
